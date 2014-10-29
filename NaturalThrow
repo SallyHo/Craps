@@ -1,0 +1,23 @@
+package Craps;
+
+/**
+ * Natural Throw is a subclass of Throw for the natural number, 7.
+ * 
+ * @author Sally Holmes
+ */
+public class NaturalThrow {
+	
+	public NatualThrow(int d1, d2) {
+		
+	}
+	
+	public boolean hard() {
+		returns false;
+	}
+	
+	public abstract void updateGame(Game theGame) {
+		
+	}
+	
+	//toString
+}

@@ -1,0 +1,24 @@
+package Craps;
+
+/**
+ * Craps Throw is a subclass of Throw for the craps numbers 2, 3 and 12.
+ * @author Jordan Damron & Sally Holmes
+ */
+
+public class CrapsThrow {
+	
+	public CrapsThrow(int d1, d2) {
+		
+	}
+	
+	public boolean hard() {
+		return false;
+	}
+	
+	public abstract void updateGame(Game theGame) {
+		
+	}
+	
+	//toString
+}
+

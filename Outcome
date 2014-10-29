@@ -1,0 +1,44 @@
+package Craps;
+
+/**
+ * 
+ * @author holmes03
+ *
+ */
+public class Outcome {
+	String name;
+	int numerator;
+	int denominator = 1;
+	
+	/**
+	 * Sets the local name and odds from the parameter name and
+	 * the numerator for the odds.
+	 * @param name
+	 * @param odds
+	 * @return
+	 */
+	public Outcome outcome1(String name, int odds) {
+		this.name = name;
+		numerator = odds;
+	}
+	
+	/**
+	 * 
+	 * @param name
+	 * @param numerator
+	 * @return
+	 */
+	public Outcome outcome2(String name, int numerator) {
+		
+	}
+	
+	/**
+	 * Returns the product of this Outcome's odds numerator by the given amount, 
+	 * divided by the odds denominator.
+	 * @param amount
+	 * @return 
+	 */
+	public double winAmount(int amount) {
+		return numerator / denominator;
+	}
+}

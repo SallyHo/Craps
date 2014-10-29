@@ -1,0 +1,12 @@
+package Craps;
+
+/**
+ * 
+ * @author holmes03
+ *
+ */
+public class CrapsTable {
+
+}
+
+//use linkedlists for bets

@@ -2,9 +2,24 @@ package Craps;
 
 /**
  * 
- * @author holmes03
+ * @author Jordan Damron & Sally Holmes
  *
  */
 public class Throw {
+	private Set outcomes;
+	private int d1, d2;
+	
+	/**
+	
+	public Throw(int d1, d2) {
+	
+	}
+	
+	public Throw(int d1, d2, Set outcomes) {
+	
+	}
 
+	public Throw(int d1, d2, Outcome[] outcomes) {
+	
+	}
 }

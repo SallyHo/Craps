@@ -6,5 +6,24 @@ package Craps;
 *
 */
 public class CrapsGame {
-
+	int point = 0;
+	
+	public CrapsGame() {
+		
+		public void craps() {
+		
+		}
+		
+		public void natural() {
+		
+		}
+		
+		public void eleven() {
+		
+		}
+		
+		public void point(int thePoint) {
+		
+		}
+	}
 }

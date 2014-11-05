@@ -2,7 +2,7 @@ package Craps;
 
 /**
  * 
- * @author holmes03
+ * @author Jordan Damron & Sally Holmes
  *
  */
 public class ThrowBuilder {

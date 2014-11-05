@@ -5,20 +5,18 @@ package Craps;
  * @author Sally Holmes
  */
 public class PointThrow {
-
-	public class CrapsThrow {
-		
-		public PointThrow(int d1, d2) {
+	
+	public PointThrow(int d1, int d2) {
 			
-		}
+	}
 		
-		public boolean hard() {
-			returns false;
-		}
+	public boolean hard() {
+		return false;
+	}
 		
-		public abstract void updateGame(Game theGame) {
+	public void updateGame(Game theGame) {
 			
-		}
+	}
 		
-		//toString
+	//toString
 }

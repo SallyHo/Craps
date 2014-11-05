@@ -6,5 +6,10 @@ package Craps;
  *
  */
 public class Dice {
+	private int d1, d2;
+	
+	public NumberPair() {
+		
+	}
 
 }

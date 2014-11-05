@@ -1,13 +1,12 @@
 package Craps;
 
 /**
- * Eleven Throw is a subclass of Throw for the number, 11.
- * @author Jordan Damron & Sally Holmes
- */
-
+* Eleven Throw is a subclass of Throw for the number, 11.
+* @author Jordan Damron & Sally Holmes
+*/
 public class ElevenThrow {
 	
-	public ElevenThrow(int d1, d2) {
+	public ElevenThrow(int d1, int d2) {
 		
 	}
 	
@@ -15,7 +14,7 @@ public class ElevenThrow {
 		return false;
 	}
 	
-	public abstract void updateGame(Game theGame) {
+	public void updateGame(Game theGame) {
 		
 	}
 	

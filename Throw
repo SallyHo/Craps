@@ -1,25 +1,26 @@
 package Craps;
 
+import java.util.Set;
+
 /**
- * 
- * @author Jordan Damron & Sally Holmes
- *
- */
+*
+* @author Jordan Damron & Sally Holmes
+*
+*/
 public class Throw {
 	private Set outcomes;
 	private int d1, d2;
-	
-	/**
-	
-	public Throw(int d1, d2) {
-	
-	}
-	
-	public Throw(int d1, d2, Set outcomes) {
-	
-	}
 
-	public Throw(int d1, d2, Outcome[] outcomes) {
+	public Throw(int d1, int d2) {
+		
+	}
 	
+	public Throw(int d1, int d2, Set outcomes) {
+		
+	}
+	
+	public Throw(int d1, int d2, Outcome[] outcomes) {
+		
 	}
 }
+

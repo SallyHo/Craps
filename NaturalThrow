@@ -3,21 +3,54 @@ package Craps;
 /**
  * Natural Throw is a subclass of Throw for the natural number, 7.
  * 
- * @author Sally Holmes
+ * @author Sally Holmes, Jordan Damron
  */
-public class NaturalThrow {
+public class NaturalThrow extends Throw {
 	
-	public NatualThrow(int d1, d2) {
+	/**
+	 * <b>NaturalThrow</b>
+	 * Constructor for NaturalThrow, creates this Throw and checks for
+	 * NaturalThrow conditions (d1 + d2 must equal 7)
+	 * @param d1 the value to be initialized to d1 NaturalThrow
+	 * @param d2 the value to be initialized to d2 NaturalThrow
+	 */
+	public NaturalThrow(int d1, int d2) 
+	{	
+		//Create this throw
+		super(d1, d2);
 		
+		if(d1 + d2 != 7)
+		{
+			throw new RuntimeException("Not a Natural Throw!");
+		}
 	}
 	
-	public boolean hard() {
-		returns false;
+	/**
+	 * <b>hard</b> 
+	 * Will always return false for a NaturalThrow
+	 */
+	public boolean hard() 
+	{
+		return false;
 	}
 	
-	public abstract void updateGame(Game theGame) {
-		
+	/**
+	 * <b>updateGame</b>
+	 * Updates the game state based on this throw
+	 * @param theGame the game to have its state updated
+	 */
+	public void updateGame(Game theGame)
+	{
+		//NEED CODE HERE
+		//update game state based on this throw -> craps() method from Game theGame
 	}
 	
-	//toString
+	/**
+	 * <b>toString</b>
+	 * Returns a String using a specified format from Throw's toString method
+	 */
+	public String toString()
+	{
+		return super.toString();
+	}
 }

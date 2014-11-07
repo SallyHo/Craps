@@ -1,5 +1,7 @@
 package Craps;
 
+import java.text.MessageFormat;
+
 /**
  * 
  * @author Jordan Damron & Sally Holmes
@@ -7,38 +9,76 @@ package Craps;
  */
 public class Outcome {
 	String name;
+	int odds;
 	int numerator;
 	int denominator = 1;
 	
 	/**
-	 * Sets the local name and odds from the parameter name and
-	 * the numerator for the odds.
-	 * @param name
-	 * @param odds
-	 * @return
+	 * <b>Outcome</b>
+	 * Basic constructor for an Outcome
+	 * @param name the name of the Outcome
+	 * @param odds the odds of the Outcome occurring
 	 */
-	public Outcome outcome1(String name, int odds) {
+	public Outcome(String name, int odds)
+	{
 		this.name = name;
-		numerator = odds;
+		this.odds = odds;
+				
+		//denominator already initialized to 1
 	}
 	
 	/**
-	 * 
-	 * @param name
-	 * @param numerator
-	 * @return
+	 * <b>Outcome</b>
+	 * Constructor for outcome that includes parameterizing numerator and denominator
+	 * @param name the name of the Outcome
+	 * @param numerator the payout odds numerator
+	 * @param denominator the payout odds denominator
 	 */
-	public Outcome outcome2(String name, int numerator) {
-		
+	public Outcome(String name, int numerator, int denominator)
+	{
+		this.name = name;
+		this.numerator = numerator;
+		this.denominator = denominator;
 	}
-	
+
 	/**
 	 * Returns the product of this Outcome's odds numerator by the given amount, 
 	 * divided by the odds denominator.
 	 * @param amount
-	 * @return 
+	 * @return float division of numerator by denominator
 	 */
-	public double winAmount(int amount) {
-		return numerator / denominator;
+	public double winAmount(int amount) 
+	{
+		return (amount * numerator) / denominator;
 	}
+	
+	/**
+	 * <b>equals</b> Checks if two outcomes are equal
+	 * @param other the Outcome to be compared
+	 * @return true if two Outcome objects are equal, false if otherwise
+	 */
+	public boolean equals(Outcome other)
+	{
+		if(this.name.equals(other.name) && this.odds == other.odds
+				&& this.numerator == other.numerator && this.denominator == other.denominator)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+	
+	/**
+	 * <b>toString</b> Print the Outcome using a specified format
+	 */
+	public String toString()
+	{
+		Object[]values = {name, new Integer(odds)};
+		String message = "{}";
+		
+		return MessageFormat.format(message, values);
+	}
+	
 }

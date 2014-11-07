@@ -1,5 +1,6 @@
 package Craps;
 
+import java.text.MessageFormat;
 import java.util.Set;
 
 /**
@@ -8,19 +9,74 @@ import java.util.Set;
 *
 */
 public class Throw {
-	private Set outcomes;
+	private Set<Outcome> outcomes;
 	private int d1, d2;
 
-	public Throw(int d1, int d2) {
-		
+	/**
+	 * <b>Throw</b> 
+	 * Basic constructor for Throw object with d1, and d2 
+	 * dice values
+	 * @param d1 the value to be initialized to this d1
+	 * @param d2 the value to be initialized to this d2
+	 */
+	public Throw(int d1, int d2) 
+	{
+		this.d1 = d1;
+		this.d2 = d2;
 	}
 	
-	public Throw(int d1, int d2, Set outcomes) {
-		
+	/**
+	 * <b>Throw</b>
+	 * Constructor for Throw with a parameterized set of outcomes
+	 * in addition to d1, and d2 
+	 * @param d1 the value to be initialized to this d1
+	 * @param d2 the value to be initialized to this d2
+	 * @param outcomes the set of outcomes to be initialized to this outcomes
+	 */
+	public Throw(int d1, int d2, Set<Outcome> outcomes) 
+	{
+		this.d1 = d1;
+		this.d2 = d2;
+		this.outcomes = outcomes;
 	}
 	
-	public Throw(int d1, int d2, Outcome[] outcomes) {
+	/**
+	 * <b>hard</b>
+	 * Determines if the two dice rolls are the same (helps in determining
+	 * if hardways bets have been won/lost)
+	 * @return true if d1 is equal to d2, false if otherwise
+	 */
+	public boolean hard()
+	{
+		if( d1 == d2)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+	
+	/**
+	 * <b>updateGame</b>
+	 * Updates the game state of CrapsGame game based on this Throw
+	 * @param game the game state to be changed
+	 */
+	public void updateGame(CrapsGame game)
+	{
+		//NEED CODE HERE
+	}
+	
+	/**
+	 * <b>toString</b>
+	 * Return the dice throws using a specified format
+	 */
+	public String toString()
+	{
+		int[] values = {new Integer(d1), new Integer(d2)};
+		String message = "()";
 		
+		return MessageFormat.format(message, values);
 	}
 }
-

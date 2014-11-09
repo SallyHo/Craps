@@ -1,22 +1,56 @@
 package Craps;
 
 /**
-* Eleven Throw is a subclass of Throw for the number, 11.
-* @author Jordan Damron & Sally Holmes
-*/
-public class ElevenThrow {
+ * Eleven Throw is a subclass of Throw for the number, 11.
+ * @author Sally Holmes & Jordan Damron
+ */
+
+public class ElevenThrow extends Throw{
 	
-	public ElevenThrow(int d1, int d2) {
+	/**
+	 * <b>ElevenThrow</b>
+	 * Constructor for an ElevenThrow, creates this Throw and then checks
+	 * for an eleven throw condition (d1 + d2 = 11)
+	 * @param d1 the value to be initialized to d1 CrapsThrow
+	 * @param d2 the value to be initialized to d2 CrapsThrow
+	 */
+	public ElevenThrow(int d1, int d2) 
+	{
+		super(d1, d2);
 		
+		if((d1 + d2) != 11)
+		{
+			throw new RuntimeException("Not an Eleven Throw!");
+		}
 	}
 	
-	public boolean hard() {
+	/**
+	 * <b>hard</b>
+	 * An eleven is odd and never a hardways bet, so this method
+	 * will always return false
+	 */
+	public boolean hard() 
+	{
 		return false;
 	}
 	
-	public void updateGame(Game theGame) {
-		
+	/**
+	 * <b>updateGame</b>
+	 * Updates the game state based on this throw
+	 * @param theGame the game to have its state updated
+	 */
+	public void updateGame(Game theGame) 
+	{
+		//NEED CODE HERE
+		//update game state based on this throw -> craps() method from Game theGame
 	}
 	
-	//toString
+	/**
+	 * <b>toString</b>
+	 * Returns a String using a specified format from Throw's toString method
+	 */
+	public String toString()
+	{
+		return super.toString();
+	}
 }

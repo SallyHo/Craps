@@ -2,21 +2,57 @@ package Craps;
 
 /**
  * Point Throw is a subclass of Throw for the point numbers 4, 5, 6, 8, 9 or 10.
- * @author Sally Holmes
+ * @author Sally Holmes & Jordan Damron
  */
-public class PointThrow {
+public class PointThrow extends Throw{
 	
-	public PointThrow(int d1, int d2) {
-			
+	/**
+	 * <b>PointThrow</b>
+	 * Constructor for PointThrow, creates this Throw and checks for
+	 * PointThrow conditions (d1 + d2 must be an element of 4, 5, 6, 8, 9, or 10)
+	 * @param d1 the value to be initialized to d1 PointThrow
+	 * @param d2 the value to be initialized to d2 PointThrow
+	 */
+	public PointThrow(int d1, int d2) 
+	{
+		super(d1, d2);
+		
+		int temp = d1 + d2;
+		
+		if(temp != 4 || temp != 5 || temp != 6 || temp != 8 || temp != 9 || temp != 10)
+		{
+			throw new RuntimeException("Not a Point Throw!");
+		}
 	}
 		
-	public boolean hard() {
-		return false;
+	/**
+	 * <b>hard</b>
+	 * Determines if the two dice rolls are the same (hardways)
+	 * @return true if d1 is equal to d2, false if otherwise using
+	 * superclass hard method
+	 */
+	public boolean hard() 
+	{
+		return super.hard();
 	}
 		
-	public void updateGame(Game theGame) {
-			
+	/**
+	 * <b>updateGame</b>
+	 * Updates the game state based on this throw
+	 * @param theGame the game to have its state updated
+	 */
+	public void updateGame(Game theGame)
+	{
+		//NEED CODE HERE
+		//update game state based on this throw -> craps() method from Game theGame
 	}
 		
-	//toString
+	/**
+	 * <b>toString</b>
+	 * Returns a String using a specified format from Throw's toString method
+	 */
+	public String toString()
+	{
+		return super.toString();
+	}
 }

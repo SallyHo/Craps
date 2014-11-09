@@ -2,23 +2,58 @@ package Craps;
 
 /**
  * Craps Throw is a subclass of Throw for the craps numbers 2, 3 and 12.
- * @author Jordan Damron & Sally Holmes
+ * @author Sally Holmes & Jordan Damron
  */
 
-public class CrapsThrow {
+public class CrapsThrow extends Throw{
 	
-	public CrapsThrow(int d1, d2) {
+	/**
+	 * <b>CrapsThrow</b>
+	 * Constructor for a CrapsThrow, creates this Throw and then checks
+	 * for a craps throw condition (d1 + d2 is an element of 2, 3, or 12)
+	 * @param d1 the value to be initialized to d1 CrapsThrow
+	 * @param d2 the value to be initialized to d2 CrapsThrow
+	 */
+	public CrapsThrow(int d1, int d2) 
+	{
+		super(d1, d2);
 		
+		int temp = d1 + d2;
+		
+		if(temp != 2 || temp != 3 || temp != 12)
+		{
+			throw new RuntimeException("Not a Craps Throw!");
+		}
 	}
 	
-	public boolean hard() {
+	/**
+	 * <b>hard</b>
+	 * Craps numbers are never part of hardways bets so hard for a 
+	 * CrapsThrow will always return false
+	 */
+	public boolean hard() 
+	{
 		return false;
 	}
 	
-	public abstract void updateGame(Game theGame) {
-		
+	/**
+	 * <b>updateGame</b>
+	 * Updates the game state based on this throw
+	 * @param theGame the game to have its state updated
+	 */
+	public void updateGame(Game theGame) 
+	{
+		//NEED CODE HERE
+		//update game state based on this throw -> craps() method from Game theGame
 	}
 	
-	//toString
+	/**
+	 * <b>toString</b>
+	 * Returns a String using a specified format from Throw's toString method
+	 */
+	public String toString()
+	{
+		return super.toString();
+	}
 }
 

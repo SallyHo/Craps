@@ -1,15 +1,30 @@
-package Craps;
+package CrapsGame;
 
 /**
  * 
  * @author Jordan Damron & Sally Holmes
  *
  */
+
 public class Dice {
 	private int d1, d2;
 	
-	public NumberPair() {
-		
+	public Dice() {
+		d1 = 0;
+		d2 = 0;
 	}
-
+	
+	private static int getRndInt() {
+		return (int) (6 * Math.random() + 1);
+	}
+	
+	public int sum() {
+		int sum = d1 + d2;
+		return sum;
+	}
+	
+	public void roll() {
+		getRndInt();
+	}
 }
+

@@ -6,7 +6,7 @@ package CrapsGame;
  *
  */
 public class Player {
-	private int stake;			//initializes player's starting budget
+	private int stake;		//initializes player's starting budget
 	private int roundsToGo;		//number of rounds left to play
 	Table table;
 	

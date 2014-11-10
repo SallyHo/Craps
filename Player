@@ -1,5 +1,56 @@
-package Craps;
-
+package CrapsGame;
+/**
+ * The Player places bets in a Game.
+ * Implements basic win and lose methods.
+ * @author Jordan Damron & Sally Holmes
+ *
+ */
 public class Player {
-
+	private int stake;			//initializes player's starting budget
+	private int roundsToGo;		//number of rounds left to play
+	Table table;
+	
+	/**
+	 * Creates this Player
+	 * @param aTable
+	 */
+	public Player(Table aTable) {
+		this.table = new Table();
+		stake = 0;
+		roundsToGo = 0;
+	}
+	
+	/**
+	 * 
+	 * @return
+	 */
+	public boolean playing() {
+		if (stake > Table.minimum)
+			return true;
+		//if the player has bets on the table, return true
+	}
+	
+	/**
+	 * 
+	 */
+	public void placeBets() {
+		//update Table with various Bets
+	}
+	
+	/**
+	 * 
+	 * @param theBet
+	 */
+	public void win(Bet theBet) {
+		//Bet.winAmount();
+	}
+	
+	/**
+	 * 
+	 * @param theBet
+	 */
+	public void lose(Bet theBet) {
+		//Bet.loseAmount();
+	}
 }
+

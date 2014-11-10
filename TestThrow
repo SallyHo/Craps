@@ -1,0 +1,25 @@
+import junit.framework.TestCase;
+public class TestCard extends TestCase {
+Card aceClubs, twoClubs, tenClubs, kingClubs, aceDiamonds;
+public TestCard() {
+super();
+}
+public void setUp() {
+= new Throw(1,Card.Clubs);
+twoClubs= new Throw(2,Card.Clubs);
+tenClubs= new Throw(10,Card.Clubs);
+kingClubs= new Throw(13,Card.Clubs);
+aceDiamonds= new Throw(1,Card.Diamonds);
+}
+public void testString() {
+assertEquals( " AC", aceClubs.toString() );
+assertEquals( " 2C", twoClubs.toString() );
+assertEquals( "10C", tenClubs,toString() );
+}
+public void testOrder() {
+assertTrue( tenClubs.compareTo(kingClubs) < 0 );
+assertFalse( tenClubs.compareTo(kingClubs) >= 0 );
+assertTrue( kingClubs.compareTo(aceClubs) < 0 );
+assertTrue( aceClubs.compareTo(aceDiamonds) == 0 );
+}
+}

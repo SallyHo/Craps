@@ -1,0 +1,61 @@
+package CrapsGame;
+/**
+ * 
+ * @author Jordan Damron & Sally Holmes
+ *
+ */
+public class CrapsGamePointOff {
+	//private boolean pointerState = false;
+	
+	public CrapsGamePointOff(CrapsGame theGame) {
+		//saves overall CrapsGame object
+	}
+	
+	public abstract boolean isValid(Outcome anOutcome) {
+		if(anOutcome == passLine || anOutcome == dPassLine)
+			return true;
+		else
+			return false;
+	}
+	
+	public abstract boolean isWorking(Outcome anOutcome) {
+		if(anOutcome == )
+			return false;
+		else
+			return true;
+	}
+	
+	public CrapsGameState craps() {
+		while(isValid == true && isWorking == true) {
+			if(throw == ) {
+				
+			}
+		}
+	}
+	
+	public abstract CrapsGameState natural() {
+		//when pointer = off, 7 is immediate winner
+		//PassLine bet is winner, Don'tPassLine bet is loser
+	}
+	
+	public abstract CrapsGameState eleven() {
+		//when pointer = off, 11 is immediate winner
+		//PassLine bet is winner, Don'tPassLine bet is loser
+	}
+
+	public abstract CrapsGameState point(Throw throw) {
+		//when point is off, new point is established.
+		//return new instance of CrapsGamePointOn created with given Throw's value.
+		//Come & Don't Come bets that may be on this point are pushed to player (can't be legal bets in next game state).
+	}
+	
+	public abstract Outcome pointOutcome() {
+		//return Outcome based on current point
+		//used to create PassLine / dPassLine odds
+		returns null;
+	}
+	
+	public String toString() {
+		//report if point is off, or that this is the come out roll
+	}
+}

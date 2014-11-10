@@ -1,4 +1,4 @@
-package Craps;
+package CrapsGame;
 
 /**
  * 
@@ -6,8 +6,39 @@ package Craps;
  *
  */
 public class Bet {
-
-	public void setOutcome(Outcome outcome) {
+	private int amountBet;
+	Outcome outcome;
 	
+	/**
+	 * Initializes the instance variables of this bet.
+	 * @param amount
+	 * @param outcome
+	 */
+	public Bet(int amount, Outcome outcome) {
+		this.amountBet = amountBet;
+		this.outcome = new Outcome();
+	}
+	
+	/**
+	 * Computes amount won, given the amount of this bet.
+	 * @return winAmount, the amount won in this bet.
+	 */
+	public int winAmount() {
+		
+		return 0;
+	}
+	
+	/**
+	 * Returns the amount bet as the amount lost.
+	 * This is the cost of placing the bet.
+	 * @return loseAmount, the amount lost in this bet.
+	 */
+	public int loseAmount() {
+		return 0;
+	}
+	
+	public String toString() {
+		//messageformat
 	}
 }
+

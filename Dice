@@ -1,4 +1,6 @@
-package CrapsGame;
+package Craps;
+
+import java.util.Random;
 
 /**
  * 
@@ -7,24 +9,28 @@ package CrapsGame;
  */
 
 public class Dice {
-	private int d1, d2;
+	private int d1, d2, sum;
+	private static Random randomNumbers = new Random();
 	
 	public Dice() {
 		d1 = 0;
 		d2 = 0;
 	}
 	
-	private static int getRndInt() {
-		return (int) (6 * Math.random() + 1);
-	}
-	
-	public int sum() {
-		int sum = d1 + d2;
+	private int roll() {
+		d1 = 1 + randomNumbers.nextInt(6);
+		d2 = 1 + randomNumbers.nextInt(6);
+		sum = d1 + d2;
 		return sum;
 	}
+
+//	public void roll() {
+//		getRndInt();
+//	}
 	
-	public void roll() {
-		getRndInt();
+	public String toString() {
+		System.out.print("Player rolled " + sum);
 	}
 }
+
 

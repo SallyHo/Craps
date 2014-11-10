@@ -1,10 +1,40 @@
-package Craps;
-
+package CrapsGame;
 /**
-*
-* @author Jordan Damron & Sally Holmes
-*
-*/
-public class Game {
+ * The Game Class manages the sequence of actions that defines the game of Craps.
+ * @author Jordan Damron & Sally Holmes
+ *
+ */
 
+public class Game {
+	RandomEvent eventFactory;	//returns randomly selected RandomEvent with specific Outcomes
+	Table theTable;				//contains the Bets placed by the Player
+	Player thePlayer;			//places bets on the table
+	
+	/**
+	 * Constructs a new Game, using a given RandomEventFactory and Table.
+	 * @param anEventFactory
+	 * @param aTable
+	 */
+	public Game(RandomEvent anEventFactory, Table aTable) {
+		this.eventFactory = new RandomEvent();
+		this.theTable = new Table();
+		this.thePlayer = new Player();
+	}
+	
+	/**
+	 * Executes a single cycle of play with a given Player.
+	 * @param aPlayer
+	 */
+	public abstract void cycle(Player aPlayer) {
+		Player.placeBets();
+		//validate bets based on GameState
+	}
+	
+	/**
+	 * Tells the Table to clear all bets.
+	 */
+	public void reset() {
+		// reset GameState
+	}
 }
+

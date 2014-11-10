@@ -9,6 +9,7 @@ import java.util.Set;
 *
 */
 public class Throw {
+	
 	private Set<Outcome> outcomes;
 	private int d1, d2;
 
@@ -41,6 +42,18 @@ public class Throw {
 	}
 	
 	/**
+	 * <b>getKey</b>
+	 * Returns the NumberPair object that is a key for this Throw
+	 * @return the NumberPair that is a key for this Throw
+	 */
+	public NumberPair getKey()
+	{
+		NumberPair pair = new NumberPair(this.d1, this.d2);
+
+		return pair;
+	}
+	
+	/**
 	 * <b>hard</b>
 	 * Determines if the two dice rolls are the same (helps in determining
 	 * if hardways bets have been won/lost)
@@ -66,6 +79,7 @@ public class Throw {
 	public void updateGame(CrapsGame game)
 	{
 		//NEED CODE HERE
+		//update game state based on this throw -> craps() method from Game theGame
 	}
 	
 	/**

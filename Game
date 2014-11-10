@@ -7,8 +7,8 @@ package CrapsGame;
 
 public class Game {
 	RandomEvent eventFactory;	//returns randomly selected RandomEvent with specific Outcomes
-	Table theTable;				//contains the Bets placed by the Player
-	Player thePlayer;			//places bets on the table
+	Table theTable;			//contains the Bets placed by the Player
+	Player thePlayer;		//places bets on the table
 	
 	/**
 	 * Constructs a new Game, using a given RandomEventFactory and Table.

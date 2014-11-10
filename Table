@@ -1,0 +1,58 @@
+package CrapsGame;
+
+import java.awt.List;
+import java.util.ListIterator;
+
+import javax.xml.soap.Node;
+
+/**
+ * 
+ * @author Jordan Damron & Sally Holmes
+ *
+ */
+public class Table {
+	private int minimum, maximum;
+	private Node bets;				
+	Game theGame;
+	
+	/**
+	 * Creates this Table.
+	 */
+	public Table() {
+		bets = new Node(null);		//creates empty LinkedList of bets
+	}
+	
+	/**
+	 * Validates this bet.
+	 * @param bet
+	 * @return
+	 */
+	public boolean isValid(Bet bet) {
+		//if sum of all bets <= table limit, return true.
+		return false;
+	}
+	
+	/**
+	 * Adds this bet to the list of working bets.
+	 * @param bet
+	 * @throws InvalidBet
+	 */
+	public void placeBet(Bet bet) throws InvalidBet {
+		//if sum of all bets > table limit, throw exception (indicates bug in Player most likely)
+	}
+	
+	/**
+	 * 
+	 * @return ListIterator
+	 */
+	public ListIterator iterator() {
+		return ListIterator;
+	}
+	
+	/**
+	 * Reports on all of the currently placed bets.
+	 */
+	public String toString() {
+		
+	}
+}

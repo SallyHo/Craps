@@ -1,10 +1,30 @@
-package Craps;
-
+package CrapsGame;
 /**
  * 
  * @author Jordan Damron & Sally Holmes
  *
  */
 public class CrapsPlayer {
-
+	Outcome passLine = null;
+	Bet workingBet = null;
+	Table table;
+	
+	CrapsPlayer(Table aTable) {
+		this.table = new Table();
+	}
+	
+	public void placeBets() {
+		if(workingBet == null) {
+			 //place Pass Line bet
+		} 
+		//else don't place any more bets	
+	}
+	
+	public void win(Bet theBet) {
+		
+	}
+	
+	public void lose(Bet theBet) {
+		
+	}
 }

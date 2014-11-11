@@ -1,4 +1,4 @@
-package Craps;
+package CrapsGame;
 
 /**
  * 
@@ -24,8 +24,7 @@ public class Bet {
 	 * @return winAmount, the amount won in this bet.
 	 */
 	public int winAmount() {
-		
-		return 0;
+		return Outcome.winAmount(amountBet);
 	}
 	
 	/**
@@ -34,11 +33,10 @@ public class Bet {
 	 * @return loseAmount, the amount lost in this bet.
 	 */
 	public int loseAmount() {
-		return 0;
+		return Outcome.loseAmount(amountBet);
 	}
 	
 	public String toString() {
 		//messageformat
 	}
 }
-

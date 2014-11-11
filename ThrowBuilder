@@ -68,23 +68,24 @@ public class ThrowBuilder {
 				{
 					PointThrow pThrow = new PointThrow(i, j);
 					
-					if(pThrow.hard())
+					if(i == j)
 					{
 						if(sum == 4 || sum == 10)
 						{
-							outcome = new Outcome("Hard way", 7, 1);
+							outcome = new Outcome("Hard Way", 7, 1);
 							dice.addOutcome(sum, outcome);
 						}
 						
 						if(sum == 6 || sum == 8)
 						{
-							outcome = new Outcome("Hard way", 9, 1);
+							outcome = new Outcome("Hard Way", 9, 1);
 							dice.addOutcome(sum, outcome);
 						}
 					}
 					else
 					{
-						//Easy throw
+						outcome = new Outcome("Easy Way", 1, 1);
+						dice.addOutcome(sum, outcome);
 					}
 					
 					if(sum == 4 || sum == 9 || sum == 10)
@@ -104,7 +105,13 @@ public class ThrowBuilder {
 				if(sum == 11)
 				{
 					ElevenThrow eThrow = new ElevenThrow(i, j);
-					outcome = new Outcome("Eleven Throw", 3, 1);
+					outcome = new Outcome("Eleven Throw", 15, 1);
+					dice.addOutcome(sum, outcome);
+					
+					outcome = new Outcome("Horn", 3, 1);
+					dice.addOutcome(sum, outcome);
+					
+					outcome = new Outcome("Field", 1, 1);
 					dice.addOutcome(sum, outcome);
 				}
 			}

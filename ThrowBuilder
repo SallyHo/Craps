@@ -2,9 +2,112 @@ package Craps;
 
 /**
  * 
- * @author Jordan Damron & Sally Holmes
+ * @author Sally Holmes & Jordan Damron
  *
  */
-public class ThrowBuilder {
 
+public class ThrowBuilder {
+	Outcome outcome;
+	Dice dice = new Dice();
+	
+	/**
+	 * <b>ThrowBuilder</b>
+	 * Constructor for the ThrowBuilder class, left empty
+	 */
+	public ThrowBuilder()
+	{
+		//Empty
+	}
+	
+	/**
+	 * <b>buildThrows</b>
+	 * Builds all the throws for game (sets of unique outcomes of the Dice)
+	 */
+	public void buildThrows(Dice dice)
+	{
+		for(int i = 1; i < 7; i++)
+		{
+			for(int j = 1; j < 7; j++)
+			{
+				int sum = i + j;
+				
+				if(sum == 2 || sum == 3 || sum == 12)
+				{
+					CrapsThrow cThrow = new CrapsThrow(i, j);
+					outcome = new Outcome("Any Craps", 7, 1);
+					dice.addOutcome(sum, outcome);
+					
+					if(sum == 2 || sum == 12)
+					{
+						outcome = new Outcome("Horn", 27, 4);
+						dice.addOutcome(sum, outcome);
+						
+						outcome = new Outcome("Field -Double-", 2, 1);
+						dice.addOutcome(sum, outcome);
+					}
+					
+					if(sum == 3)
+					{
+						outcome = new Outcome("Horn", 3, 1);
+						dice.addOutcome(sum, outcome);
+					}
+					
+					if(i == j)
+					{
+						outcome = new Outcome("Hard way", 30, 1);
+						dice.addOutcome(sum, outcome);
+					}
+					else
+					{
+						outcome = new Outcome("Easy way", 15, 1);
+						dice.addOutcome(sum, outcome);
+					}
+				}
+				
+				if(sum == 4 || sum == 5 || sum == 6 || sum == 8 || sum == 9 || sum == 10)
+				{
+					PointThrow pThrow = new PointThrow(i, j);
+					
+					if(pThrow.hard())
+					{
+						if(sum == 4 || sum == 10)
+						{
+							outcome = new Outcome("Hard way", 7, 1);
+							dice.addOutcome(sum, outcome);
+						}
+						
+						if(sum == 6 || sum == 8)
+						{
+							outcome = new Outcome("Hard way", 9, 1);
+							dice.addOutcome(sum, outcome);
+						}
+					}
+					else
+					{
+						//Easy throw
+					}
+					
+					if(sum == 4 || sum == 9 || sum == 10)
+					{
+						outcome = new Outcome("Field", 1, 1);
+						dice.addOutcome(sum, outcome);
+					}
+				}
+				
+				if(sum == 7)
+				{
+					NaturalThrow nThrow = new NaturalThrow(i, j);
+					outcome = new Outcome("Natural Throw", 4, 1);
+					dice.addOutcome(7, outcome);
+				}
+				
+				if(sum == 11)
+				{
+					ElevenThrow eThrow = new ElevenThrow(i, j);
+					outcome = new Outcome("Eleven Throw", 3, 1);
+					dice.addOutcome(sum, outcome);
+				}
+			}
+		}
+	}
 }

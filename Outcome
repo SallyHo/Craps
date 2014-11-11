@@ -7,7 +7,7 @@ import java.text.MessageFormat;
  * @author Jordan Damron & Sally Holmes
  *
  */
-public class Outcome {
+public class Outcome implements Comparable<Outcome>  {
 	String name;
 	int odds;
 	int numerator;
@@ -42,6 +42,7 @@ public class Outcome {
 	}
 
 	/**
+	 * <b>winAmount</b>
 	 * Returns the product of this Outcome's odds numerator by the given amount, 
 	 * divided by the odds denominator.
 	 * @param amount
@@ -49,11 +50,12 @@ public class Outcome {
 	 */
 	public double winAmount(int amount) 
 	{
-		return (amount * numerator) / denominator;
+		return ((amount * numerator) / denominator);
 	}
 	
 	/**
-	 * <b>equals</b> Checks if two outcomes are equal
+	 * <b>equals</b> 
+	 * Checks if two outcomes are equal
 	 * @param other the Outcome to be compared
 	 * @return true if two Outcome objects are equal, false if otherwise
 	 */
@@ -71,14 +73,20 @@ public class Outcome {
 	}
 	
 	/**
-	 * <b>toString</b> Print the Outcome using a specified format
+	 * <b>toString</b> 
+	 * Return the Outcome using a specified format
 	 */
 	public String toString()
 	{
-		Object[]values = {name, new Integer(odds)};
-		String message = "{}";
+		Object[] values = {name, new Integer(numerator), new Integer(denominator)};
+		String message = "{0} ({1}:{2})";
 		
 		return MessageFormat.format(message, values);
+	}
+
+	@Override
+	public int compareTo(Outcome arg0) {
+		return name.compareTo(arg0.name);
 	}
 	
 }

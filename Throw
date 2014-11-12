@@ -1,7 +1,10 @@
 package Craps;
 
 import java.text.MessageFormat;
+import java.util.Collection;
 import java.util.Set;
+import java.util.TreeSet;
+
 
 /**
 *
@@ -10,8 +13,15 @@ import java.util.Set;
 */
 public class Throw {
 	
-	private Set<Outcome> outcomes;
-	private int d1, d2;
+	Set<Outcome> outcomes;
+	Set<Outcome> winners;				//Set of winning one-roll propositions
+	Set<Outcome> losers;				//Set of losing one-roll propositions
+	Set<Outcome> win1roll;		
+	Set<Outcome> lose1roll;
+	Set<Outcome> winHardway;
+	Set<Outcome> loseHardway;
+	private int d1, d2;				//The two dice values
+	private NumberPair pair;
 
 	/**
 	 * <b>Throw</b> 
@@ -24,6 +34,16 @@ public class Throw {
 	{
 		this.d1 = d1;
 		this.d2 = d2;
+		
+		pair = getKey();
+		
+		outcomes = new TreeSet<Outcome>();
+		winners = new TreeSet<Outcome>();
+		losers = new TreeSet<Outcome>();
+		win1roll = new TreeSet<Outcome>();
+		lose1roll = new TreeSet<Outcome>();
+		winHardway = new TreeSet<Outcome>();
+		loseHardway = new TreeSet<Outcome>();
 	}
 	
 	/**
@@ -34,11 +54,94 @@ public class Throw {
 	 * @param d2 the value to be initialized to this d2
 	 * @param outcomes the set of outcomes to be initialized to this outcomes
 	 */
-	public Throw(int d1, int d2, Set<Outcome> outcomes) 
+	public Throw(int d1, int d2, Collection<? extends Outcome> outcome) 
 	{
-		this.d1 = d1;
-		this.d2 = d2;
-		this.outcomes = outcomes;
+		this(d1, d2);
+		
+		this.outcomes = new TreeSet<Outcome>();
+		this.outcomes.addAll(outcome);
+	
+		this.winners = new TreeSet<Outcome>();
+		this.losers = new TreeSet<Outcome>();
+		this.win1roll = new TreeSet<Outcome>();
+		this.lose1roll = new TreeSet<Outcome>();
+		this.winHardway = new TreeSet<Outcome>();
+		this.loseHardway = new TreeSet<Outcome>();
+	}
+	
+	/**
+	 * <b>Throw</b>
+	 * Generic constructor for creating this throw with an array of outcomes
+	 * @param d1 the value to be initialized to d1
+	 * @param d2 the value to be initialized to d2
+	 * @param array the array of outcomes
+	 */
+	public Throw(int d1, int d2, Outcome[] array)
+	{
+		this(d1, d2);	
+		
+		for(int i = 0; i < array.length; i++)
+		{
+			outcomes.add(array[i]);				
+		}
+	}
+	
+	/**
+	 * <b>Throw</b>
+	 * Creates this throw, and then associates two given sets of outcomes (winners and losers)
+	 * with winning and losing one roll propositions
+	 * @param d1 the value to be initialized to d1
+	 * @param d2
+	 * @param winners
+	 * @param losers
+	 */
+	public Throw(int d1, int d2, Collection<? extends Outcome> winners, Collection<? extends Outcome> losers)
+	{
+		this(d1, d2);
+		
+		this.winners = new TreeSet<Outcome>();
+		this.winners.addAll(winners);
+		
+		this.losers = new TreeSet<Outcome>();
+		this.losers.addAll(losers);
+		
+	}
+	
+	/**
+	 * <b>add</b>
+	 * This method adds an outcome to this Throw object
+	 * @param outcome the outcome to be added to the Bin
+	 */
+	public void add(Outcome outcome)
+	{
+		
+		if(!outcomes.contains(outcome))
+		{
+			outcomes.add(outcome);
+		}
+		
+	}
+	
+	/**
+	 * <b>add1Roll</b>
+	 * Adds the relevant outcomes to winners and losers sets 
+	 * @param winners the set to have outcomes added for winning rolls
+	 * @param losers the set to have outcomes added for losing rolls
+	 */
+	public void add1Roll(Collection<? extends Outcome> winners, Collection<? extends Outcome> losers)
+	{
+		
+	}
+	
+	/**
+	 * <b>addHardways</b>
+	 * Adds outcomes to the Hardways winners and losers sets
+	 * @param winners 
+	 * @param losers
+	 */
+	public void addHardways(Collection<? extends Outcome> winners, Collection<? extends Outcome> losers)
+	{
+		
 	}
 	
 	/**
@@ -48,9 +151,19 @@ public class Throw {
 	 */
 	public NumberPair getKey()
 	{
-		NumberPair pair = new NumberPair(this.d1, this.d2);
+		pair = new NumberPair(this.d1, this.d2);
 
 		return pair;
+	}
+	
+	/**
+	 * 
+	 * @param thrown
+	 * @return
+	 */
+	public Outcome getOutcome(Throw thrown)
+	{
+		return thrown.getOutcome(thrown);
 	}
 	
 	/**
@@ -78,19 +191,34 @@ public class Throw {
 	 */
 	public void updateGame(CrapsGame game)
 	{
-		//NEED CODE HERE
-		//update game state based on this throw -> craps() method from Game theGame
+		if(//condition)
+		{
+			game.craps();
+		}
+		else if(//condition)
+		{
+			game.natural();
+		}
+		else if(//condition)
+		{
+			game.eleven();
+		}
+		else if(//condition)
+		{
+			game.point();
+		}
 	}
 	
 	/**
 	 * <b>toString</b>
-	 * Return the dice throws using a specified format
+	 * Returns a String using a specified format
 	 */
 	public String toString()
 	{
-		int[] values = {new Integer(d1), new Integer(d2)};
-		String message = "()";
 		
-		return MessageFormat.format(message, values);
+		Object[] values= { outcomes };	
+		String msgTempl= "{0}";
+		return MessageFormat.format( msgTempl, values );
+		
 	}
 }

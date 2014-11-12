@@ -1,0 +1,121 @@
+package Craps;
+
+/**
+ * 
+ * @author Jordan Damron & Sally Holmes
+ *
+ */
+public class CrapsGameState {
+	
+	Game game = new Game();
+	
+	/**
+	 * <b>CrapsGameState</b>
+	 * Constructor for this object, CrapsGameState
+	 * @param game the Game that will be initialized to this object
+	 */
+	public CrapsGameState(Game game)
+	{
+		this.game = game;
+	}
+
+	/**
+	 * <b>isValid</b>
+	 * Checks if the outcome is a valid outcome for creating bets in the current
+	 * game state.
+	 * @param outcome the outcome to be checked
+	 * @return true if an outcome is valid, false if otherwise
+	 */
+	public boolean isValid(Outcome outcome)
+	{
+		return;
+	}
+	
+	/**
+	 * <b>isWorking</b>
+	 * Checks if an outcome is working for existing bets in the current game state.
+	 * @param outcome the outcome to be checked
+	 * @return true if the outcome is a working outcome, false if otherwise
+	 */
+	public boolean isWorking(Outcome outcome)
+	{
+		return;
+	}
+	
+	/**
+	 * <b>craps</b>
+	 * Gets the appropriate state when a 2, 3, or 12 is rolled and resolves any game
+	 * bets.
+	 * @param thrown the throw to be examined
+	 * @return an appropriate game state
+	 */
+	public Throw craps(Throw thrown)
+	{
+		return;
+	}
+	
+	/**
+	 * <b>natural</b>
+	 * Gets the appropriate state when a 7 is rolled and resolves any game bets.
+	 * @param thrown the throw to be examined
+	 * @return an appropriate game state
+	 */
+	public Throw natural(Throw thrown)
+	{
+		return;
+	}
+	
+	/**
+	 * <b>eleven</b>
+	 * Gets the appropriate state when an 11 is rolled and resolves any game bets
+	 * @param thrown the throw to be examined
+	 * @return an appropriate game state
+	 */
+	public Throw eleven(Throw thrown)
+	{
+		return;
+	}
+	
+	/**
+	 * <b>point</b>
+	 * Gets the appropriate state when the given point is rolled and resolves any
+	 * game bets.
+	 * @param thrown the throw to be examined
+	 * @return an appropriate game state
+	 */
+	public Throw point(Throw thrown)
+	{
+		return;
+	}
+	
+	/**
+	 * <b>pointOutcome</b>
+	 * Gets an outcome based on the current point (Pass Line and Don't Pass Line bets)
+	 * @return the outcome based on current point
+	 */
+	public Outcome pointOutcome()
+	{
+		return;
+	}
+	
+	/**
+	 * <b>moveToThrow</b>
+	 * Moves a come line or don't come line bet to a new outcome based on the current
+	 * roll/throw
+	 * @param bet the bet to be moved
+	 * @param thrown the throw to which the outcome is changed
+	 */
+	public void moveToThrow(Bet bet, Throw thrown)
+	{
+		
+	}
+	
+	/**
+	 * <b>toString</b>
+	 * Returns the CrapsGameState in a specified format
+	 */
+	public String toString()
+	{
+		return;
+	}
+}
